@@ -1,0 +1,65 @@
+  .App {
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    width: 1400px;
+    margin: 0 auto;
+  }
+
+  .header {
+    display: flex;
+    justify-content: center;
+    margin-top: 33px;
+  }
+
+  .joke {
+    border-top: 1px solid  #6ac9a6;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .joke__love {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 10px;
+  }
+
+  .joke__love-item {
+    display: flex;
+    margin: 10px 0;
+    font-size: 13px;
+    border: 1px solid #7d8683;
+    border-radius: 5px;
+  }
+  
+  .joke__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 10px;
+  }
+  
+  .joke__item {
+    display: flex;
+    margin: 10px 0;
+    font-size: 13px;
+    border: 1px solid #7d8683;
+    border-radius: 5px;
+  }
+  
+  .button {
+    display: inline-block;
+    background-color: #beb7b7;
+    border-radius: 11px;
+    padding: 3px 6px;
+    font-size: 17px;
+    margin-right: 20px;
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    outline: none;
+    margin-left: 10px;
+  }
+  
