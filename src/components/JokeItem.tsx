@@ -4,25 +4,20 @@ import { useDispatch } from "react-redux";
 const JokeItem: React.FC = (item) => {
     const joke = Object.values(item).join('');
     const dispatch = useDispatch();
-    const [jokeSave, setJokeSave] = React.useState<boolean>(true);
-    const [titleButton, setTitleButton] = React.useState<string>('Добавить в избранное');
-    console.log(jokeSave);
+;
  
     const handleJoke = (item: string) => {
-        setJokeSave(jokeSave);
-        if(!jokeSave) {
-            dispatch({
-                type: 'DELETE_JOKE',
-                payload: item
-              });
-            setTitleButton('Добавить в избранное');
-        } else {
-            dispatch({
-                type: 'ADD_JOKE',
-                payload: item
-              });
-            setTitleButton('Удалить из избранного');
-        }
+        dispatch({
+            type: 'ADD_JOKE',
+            payload: item
+        });
+    };
+
+    const deleteJoke = (item: string) => {
+        dispatch({
+            type: 'DELETE_JOKE',
+            payload: item
+        });
     };
 
     
@@ -37,7 +32,14 @@ const JokeItem: React.FC = (item) => {
             type="button"
             className="button"
             >
-            {titleButton}
+            Добавить в избранное
+            </button>
+            <button
+            onClick={() => deleteJoke(joke)}
+            type="button"
+            className="button"
+            >
+            Удалить из избранного
             </button>
         </div>
     );
