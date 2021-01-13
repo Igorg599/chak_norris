@@ -77,7 +77,7 @@ const App: React.FC = () => {
           {items.map((item: string) => (
             <div className="joke__love-item">
               <div key={Math.random()}>{item}</div>
-              <button onClick={() => deleteLoveJoke(item)}
+              <button className="button" onClick={() => deleteLoveJoke(item)}
                 type="button">Удалить любимую шутеечку</button>
             </div>
           ))}

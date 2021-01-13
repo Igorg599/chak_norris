@@ -23,7 +23,9 @@
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px 10px;
+    width: 35%;
   }
+  
 
   .joke__love-item {
     display: flex;
@@ -31,6 +33,9 @@
     font-size: 13px;
     border: 1px solid #7d8683;
     border-radius: 5px;
+    padding: 5px;
+    height: 55px;
+    font-size: 12px;
   }
   
   .joke__items {
@@ -38,6 +43,7 @@
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px 10px;
+    width: 55%;
   }
   
   .joke__item {
@@ -46,14 +52,17 @@
     font-size: 13px;
     border: 1px solid #7d8683;
     border-radius: 5px;
+    padding: 5px;
+    height: 55px;
   }
   
   .button {
     display: inline-block;
-    background-color: #beb7b7;
+    background-color: #cea3a3;
     border-radius: 11px;
     padding: 3px 6px;
-    font-size: 17px;
+    font-size: 14px;
+    font-weight: 600;
     margin-right: 20px;
     min-width: 100px;
     text-align: center;
