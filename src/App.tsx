@@ -3,28 +3,14 @@ import "./styles.css";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 
+import JokeItem from "./components/JokeItem"; 
+
 const App: React.FC = () => {
   const dispatch = useDispatch();
   const [jokes, setJokes] = React.useState<Array<string>>([]);
   const [activeAcounter, setActiveCounter] = React.useState<boolean>(false);
   const [randomJokes, setRandomjokes] = React.useState<string>("Запустить");
   const items = useSelector(({reducer}: any ) => reducer.items);
-  const [jokeSave, setJokeSet] = React.useState<boolean>(false);
- 
-  const handleJoke = (item: string) => {
-    setJokeSet(!jokeSave)
-    if(jokeSave === true) {
-      dispatch({
-        type: 'DELETE_JOKE',
-        payload: item
-      });
-    } else {
-      dispatch({
-        type: 'ADD_JOKE',
-        payload: item
-      });
-    }
-  };
 
   const deleteLoveJoke = (item: string) => {
     dispatch({
@@ -88,7 +74,7 @@ const App: React.FC = () => {
       </div>
       <div className="joke">
         <div className="joke__love">
-          {items.map((item: any) => (
+          {items.map((item: string) => (
             <div className="joke__love-item">
               <div key={Math.random()}>{item}</div>
               <button onClick={() => deleteLoveJoke(item)}
@@ -97,19 +83,8 @@ const App: React.FC = () => {
           ))}
         </div>
         <div className="joke__items">
-          {jokes.map((item) => (
-            <div className="joke__item">
-              <div className="joke__item-text" key={Math.random()}>
-                {item}
-              </div>
-              <button
-                onClick={() => handleJoke(item)}
-                type="button"
-                className="button"
-              >
-                В избранное
-              </button>
-            </div>
+          {jokes.map((item: string) => (
+            <JokeItem {...item} key={Math.random()}/>
           ))}
         </div>
       </div>
